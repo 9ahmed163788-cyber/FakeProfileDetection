@@ -71,7 +71,7 @@ The thesis reports the following configuration:
 
 The Golf Optimization Algorithm was investigated as an independent hyperparameter optimization experiment.
 
-Its experimental evaluation and corresponding results are documented separately in the Master's thesis.
+Its experimental evaluation and corresponding results are documented separately in the Master's thesis. No numerical result is reported here because a specific value has not been independently verified for this summary.
 
 ### 3.5 Shell Game Optimization (SGO)
 
@@ -81,7 +81,9 @@ The thesis reports the following configuration:
 
 | Configuration | Reported Test Accuracy |
 |---|---:|
-| Local Contrast Normalization + SGO | 99.67% |
+| Local Contrast Normalization (LCN) + SGO | 99.67% |
+
+This value refers specifically to the configuration documented in the Master's thesis. Other SGO experimental runs may use different configurations and produce different results; they should be considered separately.
 
 ## 4. Selected Experimental Results
 
@@ -95,6 +97,8 @@ The following table summarizes selected configurations reported in the Master's 
 | Local Contrast Normalization | SGO | 99.67% |
 
 These values represent individual experimental configurations. They do not represent a single combined experiment or a universal performance value for the model.
+
+The reported values are based on the experimental configurations and evaluation results documented in the Master's thesis. The corresponding experimental details can be found in Chapter 5.
 
 The complete experimental analysis, including additional evaluation metrics, is available in the Master's thesis.
 
@@ -129,7 +133,7 @@ Comparisons between experimental configurations should take into account their r
 
 ## 7. Full Research Documentation
 
-**Thesis title:**
+**Thesis Title:**
 
 *Solution pour la détection des faux profils sur les réseaux sociaux : normalisation des images.*
 
@@ -139,6 +143,8 @@ Comparisons between experimental configurations should take into account their r
 
 **Year:** 2025.
 
-**Research code:**  
-https://github.com/9ahmed163788-cyber/FakeProfileDetection
+**Research Repository:**
+
+[FakeProfileDetection](https://github.com/9ahmed163788-cyber/FakeProfileDetection)
+
 
