@@ -1,4 +1,5 @@
 # Deep Learning-Based Fake Social Media Profile Detection
+
 ### Image Normalization and Metaheuristic Optimization Using ResNet-50
 
 ## Overview
@@ -12,16 +13,16 @@ The proposed experimental framework employs a pretrained **ResNet-50** convoluti
 - **Real**
 - **Verified**
 
-The study focuses on examining how different image normalization techniques affect classification performance and how metaheuristic optimization algorithms can be independently applied to optimize the model's hyperparameters.
+The study examines how different image normalization techniques affect classification performance and how metaheuristic optimization algorithms can be independently applied to optimize model hyperparameters.
 
-Rather than combining all optimization algorithms into a single implementation, each metaheuristic algorithm is investigated through a separate experiment. Their individual results are documented and compared in the accompanying Master's thesis.
+Rather than combining all optimization algorithms into a single implementation, each metaheuristic algorithm is investigated as a separate experimental approach. Their individual results are documented and compared in the accompanying Master's thesis.
 
 ## Research Objectives
 
 The main objectives of this project are:
 
 1. Investigate the effectiveness of different image normalization techniques in deep learning-based image classification.
-2. Evaluate the performance of ResNet-50 for distinguishing between four categories of social media profiles.
+2. Evaluate the performance of ResNet-50 for distinguishing between four categories of social media profile images.
 3. Explore metaheuristic optimization as an approach to hyperparameter tuning.
 4. Implement and evaluate five metaheuristic algorithms independently.
 5. Compare experimental outcomes to examine the impact of normalization and optimization strategies on classification performance.
@@ -40,6 +41,8 @@ The experiments use the **X Fake Profile Detection** image dataset.
 - **Image format:** RGB
 
 The dataset contains profile images categorized as Bots, Cyborgs, Real, and Verified.
+
+The dataset is not included in this repository and must be obtained separately before running the experiments.
 
 ## Methodology
 
@@ -60,7 +63,7 @@ Ten image normalization techniques are investigated to study their influence on 
 9. Local Contrast Normalization (LCN)
 10. Color Normalization
 
-The normalization experiments are conducted to evaluate how different preprocessing strategies influence the performance of the ResNet-50 model.
+The normalization experiments evaluate how different preprocessing strategies influence the performance of the ResNet-50 model.
 
 ### 2. Metaheuristic Hyperparameter Optimization
 
@@ -97,7 +100,7 @@ The implementation uses Python and PyTorch.
 
 ## Experimental Results
 
-The thesis reports high classification performance across several normalization and optimization configurations.
+The Master's thesis reports high classification performance across several normalization and optimization configurations.
 
 Some of the reported results include:
 
@@ -112,6 +115,8 @@ These values are reported experimental results from the Master's thesis. They re
 
 The thesis also presents additional experimental comparisons, classification reports, and evaluation results.
 
+For further details, see [RESULTS.md](RESULTS.md).
+
 ## Technologies and Tools
 
 - **Programming Language:** Python
@@ -119,16 +124,93 @@ The thesis also presents additional experimental comparisons, classification rep
 - **Model Architecture:** ResNet-50
 - **Image Processing:** OpenCV, NumPy
 - **Data Analysis:** Pandas
-- **Visualization and Evaluation:** Matplotlib, Scikit-learn
+- **Visualization:** Matplotlib, Seaborn
+- **Machine Learning and Evaluation:** Scikit-learn
 - **Development Environment:** Jupyter Notebook
 
-## Repository Contents
+## Repository Structure
 
-This repository contains the experimental notebooks and supporting materials associated with the research.
+```text
+FakeProfileDetection/
+│
+├── code/
+│   ├── README.md
+│   ├── code3.ipynb
+│   ├── notebook 1 (normalization).ipynb
+│   └── notebook 2 (metaheuristics).ipynb
+│
+├── .gitignore
+├── CITATION.cff
+├── LIMITATIONS.md
+├── METHODOLOGY.md
+├── README.md
+├── requirements.txt
+└── RESULTS.md
+```
 
-The notebooks document the data preparation, image normalization, model training, and optimization experiments.
+### Research Notebooks
 
-Each optimization algorithm is associated with its own experimental implementation and corresponding results, as documented in the thesis.
+The `code/` directory contains the Jupyter Notebooks associated with the computational experiments.
+
+See [Code Documentation](code/README.md) for an overview of the notebooks and their experimental workflow.
+
+## Installation and Execution
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/9ahmed163788-cyber/FakeProfileDetection.git
+cd FakeProfileDetection
+```
+
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+Install the project dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install Jupyter Notebook if it is not already available:
+
+```bash
+pip install notebook
+```
+
+### 4. Launch Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+Navigate to the `code/` directory and open the notebook you want to explore.
+
+**Execution Notes:**
+
+- The dataset must be downloaded separately.
+- Dataset paths may need to be adjusted to match the local environment.
+- Some notebooks contain Kaggle-specific paths that may require modification.
+- GPU execution requires a compatible PyTorch and CUDA configuration. CPU execution may also be possible, depending on available resources.
 
 ## Research Thesis
 
@@ -149,6 +231,8 @@ The experimental framework evaluates profile images rather than performing compr
 
 The reported performance should therefore be understood within the scope of the dataset, experimental settings, and image-based classification task.
 
+For a detailed discussion, see [LIMITATIONS.md](LIMITATIONS.md).
+
 ## Author
 
 **AHMED J M ABUAMER**
@@ -166,7 +250,8 @@ Additional research documentation is available in the following files:
 - [Experimental Results](RESULTS.md) – Individual experimental results for the five independently evaluated metaheuristic algorithms.
 - [Research Limitations and Future Directions](LIMITATIONS.md) – Research scope, limitations, and potential future research directions.
 - [Citation](CITATION.cff) – Citation information for this research project.
+- [Code Documentation](code/README.md) – Overview of the research notebooks and their experimental workflow.
 
 ---
 
-*This repository accompanies a Master's research project on deep learning-based fake social media profile image detection, focusing on image normalization and independent metaheuristic optimization experiments.*
+*This repository accompanies a Master's research project on deep learning-based fake social media profile image detection, focusing on image normalization, ResNet-50 classification, and independent metaheuristic optimization experiments.*
