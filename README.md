@@ -1,156 +1,163 @@
 # Deep Learning-Based Fake Social Media Profile Detection
+### Image Normalization and Metaheuristic Optimization Using ResNet-50
 
-### Image Normalization, ResNet-50, and Metaheuristic Optimization
+## Overview
 
-## Project Overview
+This research project investigates image-based fake social media profile detection using deep learning, image normalization techniques, and metaheuristic optimization.
 
-This project presents a deep learning-based approach to image-based fake social media profile detection. It investigates the impact of image preprocessing, normalization techniques, and metaheuristic optimization on the classification performance of convolutional neural networks.
+The proposed experimental framework employs a pretrained **ResNet-50** convolutional neural network to classify social media profile images into four categories:
 
-The proposed framework uses a ResNet-50 architecture, implemented in PyTorch, to classify profile images into four categories:
-
-- **Bots**
-- **Cyborgs**
+- **Bot**
+- **Cyborg**
 - **Real**
 - **Verified**
 
-The main focus is to examine how different image normalization strategies influence feature representation and classification performance, and how metaheuristic optimization methods can contribute to model configuration and performance improvement.
+The study focuses on examining how different image normalization techniques affect classification performance and how metaheuristic optimization algorithms can be independently applied to optimize the model's hyperparameters.
+
+Rather than combining all optimization algorithms into a single implementation, each metaheuristic algorithm is investigated through a separate experiment. Their individual results are documented and compared in the accompanying Master's thesis.
 
 ## Research Objectives
 
-The main objectives of this research are:
+The main objectives of this project are:
 
-- Investigate the effect of image normalization and preprocessing techniques on profile-image classification.
-- Develop a deep learning classification pipeline based on ResNet-50.
-- Compare different preprocessing and normalization configurations.
-- Explore metaheuristic optimization methods for model tuning.
-- Evaluate classification performance across four profile categories.
-- Analyse the relationship between image representation, preprocessing strategies, and classification results.
+1. Investigate the effectiveness of different image normalization techniques in deep learning-based image classification.
+2. Evaluate the performance of ResNet-50 for distinguishing between four categories of social media profiles.
+3. Explore metaheuristic optimization as an approach to hyperparameter tuning.
+4. Implement and evaluate five metaheuristic algorithms independently.
+5. Compare experimental outcomes to examine the impact of normalization and optimization strategies on classification performance.
+
+## Dataset
+
+The experiments use the **X Fake Profile Detection** image dataset.
+
+- **Source:** [Hugging Face – X Fake Profile Detection](https://huggingface.co/datasets/drveronika/x_fake_profile_detection)
+- **Total images:** 15,000
+- **Training set:** 10,000 images
+- **Validation set:** 1,000 images
+- **Test set:** 4,000 images
+- **Number of classes:** 4
+- **Image dimensions:** 224 × 224 pixels
+- **Image format:** RGB
+
+The dataset contains profile images categorized as Bots, Cyborgs, Real, and Verified.
 
 ## Methodology
 
-### 1. Image Preprocessing and Normalization
+The research methodology consists of two main experimental stages.
 
-The research investigates several image-processing and normalization techniques:
+### 1. Image Normalization
 
-- **Min-Max Normalization:** Rescaling image values to a predefined range.
-- **Z-score Normalization:** Standardizing values based on their mean and standard deviation.
-- **Histogram Equalization:** Improving image contrast through intensity distribution adjustment.
-- **Principal Component Analysis (PCA):** Exploring dimensionality reduction and feature representation.
-- **Local Contrast Normalization (LCN):** Enhancing local image contrast and normalization.
+Ten image normalization techniques are investigated to study their influence on image representation and classification performance:
 
-These techniques are investigated to assess their influence on the input representation and subsequent classification performance.
+1. Min-Max Normalization
+2. Z-Score Normalization
+3. Mean Normalization
+4. Decimal Scaling
+5. Histogram Equalization
+6. Principal Component Analysis (PCA)
+7. Whitening
+8. Batch Normalization
+9. Local Contrast Normalization (LCN)
+10. Color Normalization
 
-### 2. Deep Learning Architecture
+The normalization experiments are conducted to evaluate how different preprocessing strategies influence the performance of the ResNet-50 model.
 
-The classification framework is based on the following configuration:
+### 2. Metaheuristic Hyperparameter Optimization
 
-| Component | Description |
+Five metaheuristic optimization algorithms are implemented and evaluated independently:
+
+| Algorithm | Abbreviation |
 |---|---|
-| Model architecture | ResNet-50 |
-| Framework | PyTorch |
-| Learning approach | Transfer Learning |
-| Input data | Social media profile images |
-| Classification task | Four-class image classification |
-| Output categories | Bots, Cyborgs, Real, Verified |
+| Tug of War Optimization | TWO |
+| Hunger Games Search | HGS |
+| Kho-Kho Optimization | KKO |
+| Golf Optimization Algorithm | GOA |
+| Shell Game Optimization | SGO |
 
-ResNet-50 is used as the main convolutional neural network architecture to extract visual features and perform profile-image classification.
+Each algorithm is treated as a separate experimental approach for hyperparameter optimization.
 
-### 3. Metaheuristic Optimization
+The resulting experiments are documented individually, allowing their performance to be examined and compared without confusing the implementation or results of one algorithm with another.
 
-The research explores the use of metaheuristic optimization approaches in the model-tuning process.
+## Deep Learning Architecture
 
-The investigated algorithms include:
+**ResNet-50** is used as the primary classification architecture.
 
-- **Tug of War Optimization (TWO)**
-- **Hunger Games Search (HGS)**
-- **Shell Game Optimization (SGO)**
+The experimental implementation is based on:
 
-Different optimization and preprocessing configurations are examined to investigate their impact on the classification results.
+- Transfer learning with pretrained ResNet-50 weights.
+- Fine-tuning and a customized classification layer.
+- Cross-entropy loss.
+- AdamW optimizer.
+- Learning-rate scheduling.
+- Data augmentation.
+- Early stopping.
+- Classification performance evaluation.
+
+The implementation uses Python and PyTorch.
 
 ## Experimental Results
 
-The Master's thesis reports the following results for the configuration combining **Shell Game Optimization (SGO)** with **Local Contrast Normalization (LCN)**:
+The thesis reports high classification performance across several normalization and optimization configurations.
 
-| Evaluation Metric | Reported Result |
-|---|---:|
-| Precision | 99.67% |
-| F1-score | 1.0000 |
+Some of the reported results include:
 
-These values are reported from the thesis experiments and should be interpreted in the context of the experimental configuration and evaluation procedure described in the original research.
+| Normalization | Optimization Algorithm | Reported Test Accuracy |
+|---|---|---:|
+| Histogram Equalization | Hunger Games Search (HGS) | 99.83% |
+| Histogram Equalization | Kho-Kho Optimization (KKO) | 99.78% |
+| Histogram Equalization | Tug of War Optimization (TWO) | 99.75% |
+| Local Contrast Normalization (LCN) | Shell Game Optimization (SGO) | 99.67% |
 
-The results are presented as experimental findings rather than a general guarantee of performance on other datasets or real-world social media platforms.
+These values are reported experimental results from the Master's thesis. They represent individual configurations and should not be interpreted as a single combined experiment.
 
-## Repository Structure
-
-The project source code is available in the following directory:
-
-```text
-FakeProfileDetection/
-│
-├── code/
-│   └── Source code and implementation
-│
-├── README.md
-└── .gitignore
-```
-
-The repository structure may be extended as additional documentation, experimental results, and reproducibility materials are organised.
+The thesis also presents additional experimental comparisons, classification reports, and evaluation results.
 
 ## Technologies and Tools
 
-The project is based on the following technologies and research tools:
+- **Programming Language:** Python
+- **Deep Learning Framework:** PyTorch
+- **Model Architecture:** ResNet-50
+- **Image Processing:** OpenCV, NumPy
+- **Data Analysis:** Pandas
+- **Visualization and Evaluation:** Matplotlib, Scikit-learn
+- **Development Environment:** Jupyter Notebook
 
-- **Python** – Main programming language.
-- **PyTorch** – Deep learning model implementation and training.
-- **ResNet-50** – Convolutional neural network architecture.
-- **Image Processing** – Image preprocessing and normalization.
-- **Metaheuristic Optimization** – Model optimization experiments.
-- **Git and GitHub** – Source code management and project documentation.
+## Repository Contents
 
-## Dataset and Model Resources
+This repository contains the experimental notebooks and supporting materials associated with the research.
 
-The dataset and model resources associated with this research are referenced in the original project materials.
+The notebooks document the data preparation, image normalization, model training, and optimization experiments.
 
-For further details about the dataset, experimental configurations, and model implementation, please consult the source code and the corresponding Master's thesis.
+Each optimization algorithm is associated with its own experimental implementation and corresponding results, as documented in the thesis.
 
-## Reproducibility
+## Research Thesis
 
-The repository contains the implementation associated with the research project.
+**Title:**  
+*Solution pour la détection des faux profils sur les réseaux sociaux : normalisation des images.*
 
-Installation instructions, dependency versions, dataset preparation procedures, and execution commands should be verified against the source code before being documented as reproducible steps.
+**Degree:** Master's Degree in Computer Science – Pattern Recognition and Artificial Intelligence.
 
-The experimental results should be considered alongside the implementation details and evaluation methodology described in the thesis.
+**Institution:** Hassiba Ben Bouali University of Chlef, Algeria.
 
-## Research Limitations
+**Year:** 2025.
 
-This project focuses specifically on the visual analysis of social media profile images.
+## Research Scope and Limitations
 
-It does not claim to establish the authenticity of an entire social media account based on its profile image alone. In particular, the current research scope does not include:
+This research focuses on image-based classification of social media profile categories.
 
-- Natural Language Processing (NLP) of profile descriptions or posts.
-- Social-network graph analysis.
-- Behavioural analysis of account activity.
-- Real-time monitoring of social media platforms.
-- Multimodal verification combining images, text, and account behaviour.
+The experimental framework evaluates profile images rather than performing comprehensive account-level verification. It does not claim to detect fake accounts through behavioral analysis, textual content, social-network relationships, or real-time platform monitoring.
 
-These aspects represent possible directions for further research beyond the scope of this work.
-
-## Academic Reference
-
-**Master's Thesis**
-
-*Solution pour la détection des faux profils sur les réseaux sociaux : normalisation des images*
-
-Master's Degree in Computer Science – Pattern Recognition and Artificial Intelligence  
-Hassiba Ben Bouali University of Chlef  
-Algeria, 2025
+The reported performance should therefore be understood within the scope of the dataset, experimental settings, and image-based classification task.
 
 ## Author
 
-**Ahmed J. M. Abuamer**
+**AHMED J M ABUAMER**
 
-GitHub: https://github.com/9ahmed163788-cyber
+Master's Graduate in Computer Science – Pattern Recognition and Artificial Intelligence.
+
+- **GitHub:** [9ahmed163788-cyber](https://github.com/9ahmed163788-cyber)
+- **Research Repository:** [FakeProfileDetection](https://github.com/9ahmed163788-cyber/FakeProfileDetection)
 
 ---
 
-*This repository accompanies an academic Master's research project in deep learning, computer vision, image normalization, and metaheuristic optimization.*
+*This repository accompanies a Master's research project on deep learning-based fake social media profile image detection, focusing on image normalization and independent metaheuristic optimization experiments.*
