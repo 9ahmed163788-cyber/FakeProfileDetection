@@ -1,0 +1,18 @@
+# Deep Learning and Computer Vision
+torch
+torchvision
+
+# Numerical Computing and Image Processing
+numpy
+opencv-python
+
+# Data Analysis and Visualization
+pandas
+matplotlib
+seaborn
+
+# Machine Learning Utilities
+scikit-learn
+
+# Progress Monitoring
+tqdm
