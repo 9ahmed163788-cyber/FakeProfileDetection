@@ -158,6 +158,15 @@ Master's Graduate in Computer Science – Pattern Recognition and Artificial Int
 - **GitHub:** [9ahmed163788-cyber](https://github.com/9ahmed163788-cyber)
 - **Research Repository:** [FakeProfileDetection](https://github.com/9ahmed163788-cyber/FakeProfileDetection)
 
+## Documentation
+
+Additional research documentation is available in the following files:
+
+- [Methodology](METHODOLOGY.md) – Detailed description of the dataset, preprocessing techniques, model architecture, and optimization methods.
+- [Experimental Results](RESULTS.md) – Individual experimental results for the five independently evaluated metaheuristic algorithms.
+- [Research Limitations and Future Directions](LIMITATIONS.md) – Research scope, limitations, and potential future research directions.
+- [Citation](CITATION.cff) – Citation information for this research project.
+
 ---
 
 *This repository accompanies a Master's research project on deep learning-based fake social media profile image detection, focusing on image normalization and independent metaheuristic optimization experiments.*
