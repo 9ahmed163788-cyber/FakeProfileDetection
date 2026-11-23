@@ -1,14 +1,16 @@
-
 cff-version: 1.2.0
 message: "If you use this research project, please cite it as follows."
-title: "Deep Learning-Based Fake Social Media Profile Detection"
+title: "Deep Learning-Based Fake Social Media Profile Detection Using ResNet-50, Image Normalization, and Metaheuristic Optimization"
 authors:
   - family-names: "Abuamer"
     given-names: "Ahmed J. M."
 abstract: >-
   A Master's research project investigating image-based fake social
-  media profile detection using ResNet-50, image normalization
-  techniques, and five independently implemented metaheuristic
-  optimization algorithms.
+  media profile classification using a pretrained ResNet-50 model,
+  ten image normalization techniques, and five independently
+  implemented metaheuristic optimization algorithms. The research
+  evaluates four profile-image categories: Bot, Cyborg, Real, and
+  Verified.
+type: thesis
 version: 1.0.0
 repository-code: "https://github.com/9ahmed163788-cyber/FakeProfileDetection"
